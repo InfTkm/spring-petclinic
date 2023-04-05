@@ -3,10 +3,13 @@ pipeline {
   tools {
     maven 'mvn'
   }
+  environment {
+    JAVA_HOME='/home/unx/.jdks/corretto-16.0.2'
+    PATH="${JAVA_HOME}/bin:${env.PATH}"
+  }
   stages {
     stage('build') {
       steps {
-        sh 'rm -rf ~/.m2/repository'
         sh './mvnw clean install'
         sh './mvnw package'
       }
