@@ -4,7 +4,7 @@ pipeline {
     stage('build') {
       steps {
         sh './mvnw clean install'
-        sh './gradlew build'
+        sh './mvnw package'
       }
     }
 
