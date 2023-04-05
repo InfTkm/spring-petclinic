@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+  tools {
+    jdk 'java17'
+  }
+
   stages {
     stage('build') {
       steps {
