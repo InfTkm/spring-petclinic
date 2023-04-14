@@ -14,7 +14,7 @@ pipeline {
       steps {
         sh 'env'
         sh 'echo $PATH'
-        sh "sshpass -p '123456' scp /var/tmp/spring-petclinic-3.0.0-SNAPSHOT.jar root@petclinic:/app/"
+        sh "sshpass -p '123456' scp -o StrictHostKeyChecking=no /var/tmp/spring-petclinic-3.0.0-SNAPSHOT.jar root@petclinic:/app/"
         sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory.ini deploy_petclinic.yml'
       }
     }
