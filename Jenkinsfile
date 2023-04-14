@@ -1,10 +1,6 @@
 pipeline {
   agent any
 
-  tools {
-    jdk 'java17'
-  }
-
   stages {
     stage('build') {
       steps {
@@ -17,7 +13,7 @@ pipeline {
 
     stage('deploy') {
       steps {
-        sh 'ansible-playbook -i inventory.ini deploy_petclinic.yml'
+        sh 'ansible-playbook -i deploy_petclinic.yml'
       }
     }
 
