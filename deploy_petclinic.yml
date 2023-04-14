@@ -3,4 +3,4 @@
   gather_facts: no
   tasks:
     - name: Run jar file.
-      ansible.builtin.command: java -jar /app/spring-petclinic-3.0.0-SNAPSHOT.jar
+      ansible.builtin.command: /usr/local/openjdk-17/bin/java -jar /app/spring-petclinic-3.0.0-SNAPSHOT.jar
