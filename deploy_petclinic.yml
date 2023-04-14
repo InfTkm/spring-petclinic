@@ -2,5 +2,5 @@
   hosts: petclinic
   gather_facts: no
   tasks:
-    - name: Copy JAR file to target container
-      ansible.builtin.command: touch /testabc
+    - name: Run jar file.
+      ansible.builtin.command: java -jar /app/spring-petclinic-3.0.0-SNAPSHOT.jar
