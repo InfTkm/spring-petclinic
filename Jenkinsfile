@@ -13,7 +13,7 @@ pipeline {
 
     stage('deploy') {
       steps {
-        sh 'ansible-playbook -i deploy_petclinic.yml'
+        sh 'ansible-playbook deploy_petclinic.yml'
       }
     }
 
