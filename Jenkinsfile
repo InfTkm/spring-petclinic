@@ -5,9 +5,9 @@ pipeline {
     stage('build') {
       steps {
         sh 'java -version'
-        sh './mvnw clean install'
+        sh './mvnw install'
         sh './mvnw package'
-        sh 'co target/*.jar /var/tmp'
+        sh 'cp target/*.jar /var/tmp'
       }
     }
 
