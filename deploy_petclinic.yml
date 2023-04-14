@@ -1,9 +1,6 @@
 - name: Deploy Petclinic App
-  hosts: localhost
+  hosts: petclinic
   gather_facts: no
   tasks:
     - name: Copy JAR file to target container
-      ansible.builtin.command: docker cp /var/tmp/spring-petclinic-3.0.0-SNAPSHOT.jar petclinic:/app/app.jar
-
-    - name: Restart
-      ansible.builtin.command: docker restart petclinic
+      ansible.builtin.command: touch /testabc
