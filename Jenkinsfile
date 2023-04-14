@@ -13,7 +13,7 @@ pipeline {
 
     stage('deploy') {
       steps {
-        sh 'ansible-playbook -i inventory.ini deploy_petclinic.yml'
+        sh 'ANSIBLE_HOST_KEY_CHECKING=False ansible-playbook -i inventory.ini deploy_petclinic.yml'
       }
     }
 
